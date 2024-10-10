@@ -1,0 +1,15 @@
+{
+  "name": "Node.js Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
+  "runArgs": [
+    "--platform=linux/amd64"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": ["dbaeumer.vscode-eslint"]
+    }
+  },
+  "updateContentCommand": "npm install",
+  "remoteUser": "node"
+}
