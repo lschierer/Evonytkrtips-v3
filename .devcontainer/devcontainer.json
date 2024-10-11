@@ -15,5 +15,6 @@
       "extensions": ["dbaeumer.vscode-eslint"]
     }
   },
+  "updateContentCommand": "pnpm install",
   "remoteUser": "node"
 }
