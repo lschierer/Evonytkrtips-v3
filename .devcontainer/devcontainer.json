@@ -1,6 +1,11 @@
 {
   "name": "Node.js Dev Container",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "pnpmVersion": "latest"
+    }
+  },
   "runArgs": [
     "--platform=linux/amd64"
   ],
@@ -10,6 +15,6 @@
       "extensions": ["dbaeumer.vscode-eslint"]
     }
   },
-  "updateContentCommand": "npm install",
+  "updateContentCommand": "pnpm install",
   "remoteUser": "node"
 }
