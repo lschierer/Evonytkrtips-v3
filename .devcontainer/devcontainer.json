@@ -4,7 +4,8 @@
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "pnpmVersion": "latest"
-    }
+    },
+    "ghcr.io/shyim/devcontainers-features/bun:0": {}
   },
   "runArgs": [
     "--platform=linux/amd64"
