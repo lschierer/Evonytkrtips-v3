@@ -6,14 +6,14 @@ tasks:
       npm install --yes --global corepack@latest && \
       COREPACK_ENABLE_DOWNLOAD_PROMPT=0 corepack enable
     triggeredBy:
-      - mannual
+      - manual
       - postDevcontainerStart
   installNPMs:
     name: NPM install
     command: |
       pnpm install
     triggeredBy:
-      - mannual
+      - manual
       - postDevcontainerStart
     dependsOn:
       - installPnpm
@@ -22,7 +22,7 @@ tasks:
     command: |
       pnpm update
     triggeredBy:
-      - mannual
+      - manual
       - postDevcontainerStart
     dependsOn:
       - installPnpm
