@@ -9,7 +9,8 @@ tasks:
         - postDevcontainerStart
     installNPMs:
         name: NPM install
-        command: pnpm install
+        command: |
+          pnpm install
         triggeredBy:
           - mannual
           - postDevcontainerStart
@@ -17,7 +18,8 @@ tasks:
           - installPnpm
     updateDeps:
       name: Update NPM Dependencies
-      command: pnpm update
+      command: |
+        pnpm update
       triggeredBy:
         - mannual
         - postDevcontainerStart
@@ -30,34 +32,3 @@ tasks:
             echo "Hello, World!"
         triggeredBy:
         - manual
-        # - postEnvironmentStart
-        # - postDevcontainerStart
-
-services:
-    backendExample:
-        name: Backend Service Example
-        description: Example service simulating a backend
-        commands:
-            start: |
-                echo "Starting backend service..."
-                touch /tmp/backend.started
-                while true; do
-                    sleep 1
-                    date
-                done
-            ready: |
-                if [ -f /tmp/backend.started ]; then
-                    echo "Backend service is ready"
-                    exit 0
-                else
-                    echo "Backend service is not ready"
-                    exit 1
-                fi
-            # stop: |
-            # 	echo "Stopping backend service..."
-            # 	rm /tmp/backend.started
-            # 	pkill backend
-        triggeredBy:
-            - postEnvironmentStart
-            # - postDevcontainerStart
-
