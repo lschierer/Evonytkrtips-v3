@@ -1,34 +1,36 @@
+---
 tasks:
-    installPnpm:
-      name: Install PNPM
-      command: |
-        npm install --yes --global corepack@latest && \
-        COREPACK_ENABLE_DOWNLOAD_PROMPT=0 corepack enable
-      triggeredBy:
-        - mannual
-        - postDevcontainerStart
-    installNPMs:
-        name: NPM install
-        command: |
-          pnpm install
-        triggeredBy:
-          - mannual
-          - postDevcontainerStart
-        dependsOn:
-          - installPnpm
-    updateDeps:
-      name: Update NPM Dependencies
-      command: |
-        pnpm update
-      triggeredBy:
-        - mannual
-        - postDevcontainerStart
-      dependsOn:
-          - installPnpm
-          - installNPMs
-    hello:
-        name: Hello World
-        command: |
-            echo "Hello, World!"
-        triggeredBy:
-        - manual
+  installPnpm:
+    name: Install PNPM
+    command: |
+      npm install --yes --global corepack@latest && \
+      COREPACK_ENABLE_DOWNLOAD_PROMPT=0 corepack enable
+    triggeredBy:
+      - mannual
+      - postDevcontainerStart
+  installNPMs:
+    name: NPM install
+    command: |
+      pnpm install
+    triggeredBy:
+      - mannual
+      - postDevcontainerStart
+    dependsOn:
+      - installPnpm
+  updateDeps:
+    name: Update NPM Dependencies
+    command: |
+      pnpm update
+    triggeredBy:
+      - mannual
+      - postDevcontainerStart
+    dependsOn:
+      - installPnpm
+      - installNPMs
+  hello:
+    name: Hello World
+    command: |
+      echo "Hello, World!"
+    triggeredBy:
+      - manual
+
